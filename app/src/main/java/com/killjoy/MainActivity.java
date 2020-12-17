@@ -64,12 +64,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
-            @Override
-            public boolean onClose() {
-                listView.setVisibility(View.GONE);
-                return false;
-            }
+
+
+        searchView.setOnCloseListener(() -> {
+            listView.setVisibility(View.GONE);
+            return false;
         });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
