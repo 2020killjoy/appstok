@@ -4,4 +4,12 @@
     <string name="Search">Search</string>
     <string name="button">Button</string>
     <string name="hello_world">Hello World</string>
+    <string name="market_cap">Market Cap</string>
+    <string name="_52_week_range">52 Week Range</string>
+    <string name="divided_yield">Divided Yield</string>
+    <string name="cagr">CAGR</string>
+    <string name="eps">EPS</string>
+    <string name="p_e_ratio">P/E Ratio</string>
+    <string name="price">Price</string>
+    <string name="value_watch_ad">Value (Watch Ad)</string>
 </resources>

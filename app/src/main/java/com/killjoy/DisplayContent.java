@@ -12,8 +12,6 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
 /*
 JSON
  public static CompanyBP feature(String JSON)
@@ -54,7 +52,7 @@ JSON
 public class DisplayContent extends AppCompatActivity implements LoaderManager.LoaderCallbacks<CompanyBP> {
     private static int LOADER_ID = 1;
     TextView name;
-    TextView value0, value1, value2;
+    TextView price,marketcap,week52range,pe_ratio,eps,cagr,beta,dividend;
     String val;
 
     @Override
@@ -62,9 +60,15 @@ public class DisplayContent extends AppCompatActivity implements LoaderManager.L
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_content);
         name = (TextView) findViewById(R.id.name);
-        value0 = (TextView) findViewById(R.id.value0);
-        value1 = (TextView) findViewById(R.id.value1);
-        value2 = (TextView) findViewById(R.id.value2);
+
+        price = (TextView)findViewById(R.id.price);
+        marketcap = (TextView)findViewById(R.id.marketcap);
+        week52range = (TextView)findViewById(R.id.weekrange52);
+        pe_ratio = (TextView)findViewById(R.id.pe_ratio);
+        eps = (TextView)findViewById(R.id.eps);
+        cagr = (TextView)findViewById(R.id.cagr);
+        beta = (TextView)findViewById(R.id.beta);
+        dividend = (TextView)findViewById(R.id.dividend);
 
         Intent i = getIntent();
         val = i.getExtras().getString("CompanyName");
@@ -85,9 +89,17 @@ public class DisplayContent extends AppCompatActivity implements LoaderManager.L
     public void onLoadFinished(Loader<CompanyBP> loader, CompanyBP data) {
         if (data != null) {
             name.setText(data.getName());
-            value0.setText(data.getValue0());
-            value1.setText(data.getValue1());
-            value2.setText(data.getValue2());
+            marketcap.setText(data.getMarketCap());
+            week52range.setText(data.getWeekRange52());
+            price.setText(data.getPrice());
+            pe_ratio.setText(data.getPE_ratio());
+            eps.setText(data.getEPS());
+            cagr.setText(data.getCAGR());
+            beta.setText(data.getBeta());
+            dividend.setText(data.getDividend());
+//            value0.setText(data.getValue0());
+//            value1.setText(data.getValue1());
+//            value2.setText(data.getValue2());
         } else {
             Toast.makeText(this, "NULL coming ", Toast.LENGTH_SHORT).show();
         }

@@ -23,4 +23,5 @@ public class CompanyLoader extends AsyncTaskLoader<CompanyBP> {
 //        return new CompanyBP(Name,"value0","value1","value2");
         return FetchClass.CollectDataFromSheets(Name);
     }
+
 }

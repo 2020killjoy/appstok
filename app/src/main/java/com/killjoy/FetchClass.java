@@ -67,7 +67,8 @@ public class FetchClass {
 
     private static CompanyBP extractfromSheet(JsonName obj) {
         String JSON = obj.getJSON();
-        String a = "", b = "", c = "", d = "";
+        String name = "", details = "", marketcap = "", weekhigh = "",weeklow="",price = "", pe_ratio = "", eps = "", cagr = "",beta="",dividend="";
+        String weekrange52 = "";
         Log.i("TEST", "name passed on to extract " + obj.getName());
         int index = Starting_index_of(obj.getName().toUpperCase());
         if (TextUtils.isEmpty(JSON)) {
@@ -79,10 +80,19 @@ public class FetchClass {
             JSONObject root = new JSONObject(JSON);
             JSONObject feed = root.getJSONObject("feed");
             JSONArray entry = feed.getJSONArray("entry");
-            a = (entry.getJSONObject(index).getJSONObject("gs$cell").getString("$t"));
-            b = (entry.getJSONObject(index + 1).getJSONObject("gs$cell").getString("$t"));
-            c = (entry.getJSONObject(index + 3).getJSONObject("gs$cell")).getString("$t");
-            d = (entry.getJSONObject(index + 4).getJSONObject("gs$cell").getString("$t"));
+            name = (entry.getJSONObject(index).getJSONObject("gs$cell").getString("$t"));
+            details = (entry.getJSONObject(index + 1).getJSONObject("gs$cell").getString("$t"));
+            marketcap = (entry.getJSONObject(index + 2).getJSONObject("gs$cell")).getString("$t");
+            weeklow = (entry.getJSONObject(index + 3).getJSONObject("gs$cell").getString("$t"));
+            weekhigh = (entry.getJSONObject(index + 4).getJSONObject("gs$cell").getString("$t"));
+            price = (entry.getJSONObject(index + 5).getJSONObject("gs$cell").getString("$t"));
+            pe_ratio = (entry.getJSONObject(index + 6).getJSONObject("gs$cell").getString("$t"));
+            eps = (entry.getJSONObject(index + 7).getJSONObject("gs$cell").getString("$t"));
+            cagr = (entry.getJSONObject(index + 8).getJSONObject("gs$cell").getString("$t"));
+            beta = (entry.getJSONObject(index + 9).getJSONObject("gs$cell").getString("$t"));
+            dividend = (entry.getJSONObject(index + 10).getJSONObject("gs$cell").getString("$t"));
+            weekrange52 = weeklow+"-"+weekhigh;
+
 
         } catch (Exception e) {
             Log.i("TEST", "JSOn  problem during copying");
@@ -90,7 +100,7 @@ public class FetchClass {
         Log.i("TEST", "obj created with values");
 
 
-        return new CompanyBP(a, b, c, d);
+        return new CompanyBP(name,details,marketcap,weekrange52,price,pe_ratio,eps,cagr,beta,dividend);
 
     }
 

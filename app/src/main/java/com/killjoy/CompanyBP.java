@@ -3,47 +3,66 @@ package com.killjoy;
 import java.util.SplittableRandom;
 
 public class CompanyBP {
-    private String Name;
-    private String Value0;
-    private String Value1;
-    private String Value2;
-
-    public CompanyBP(String name, String value0, String value1, String value2) {
-        Name = name;
-        Value0 = value0;
-        Value1 = value1;
-        Value2 = value2;
+    private final String Name;
+    private final String Details;
+    private final String MarketCap;
+    private final String WeekRange52;
+    private final String Price;
+    private final String PE_ratio;
+    private final String EPS;
+    private final String CAGR;
+    private final String Beta;
+    private final String Dividend;
+    public CompanyBP(String name, String details, String marketCap, String weekRange52, String price, String PE_ratio, String EPS, String CAGR, String beta, String dividend) {
+        this.Name = name;
+        this.Details = details;
+        this.MarketCap = marketCap;
+        this.WeekRange52 = weekRange52;
+        this.Price = price;
+        this.PE_ratio = PE_ratio;
+        this.EPS = EPS;
+        this.CAGR = CAGR;
+        this. Beta = beta;
+        this.Dividend = dividend;
     }
 
     public String getName() {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public String getDetails() {
+        return Details;
     }
 
-    public String getValue0() {
-        return Value0;
+    public String getMarketCap() {
+        return MarketCap;
     }
 
-    public void setValue0(String value0) {
-        Value0 = value0;
+    public String getWeekRange52() {
+        return WeekRange52;
     }
 
-    public String getValue1() {
-        return Value1;
+    public String getPrice() {
+        return Price;
     }
 
-    public void setValue1(String value1) {
-        Value1 = value1;
+    public String getPE_ratio() {
+        return PE_ratio;
     }
 
-    public String getValue2() {
-        return Value2;
+    public String getEPS() {
+        return EPS;
     }
 
-    public void setValue2(String value2) {
-        Value2 = value2;
+    public String getCAGR() {
+        return CAGR;
+    }
+
+    public String getBeta() {
+        return Beta;
+    }
+
+    public String getDividend() {
+        return Dividend;
     }
 }

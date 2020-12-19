@@ -11,8 +11,8 @@
         android:id="@+id/find"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:imeOptions="actionSearch"
         android:visibility="visible"
+        android:imeOptions="actionSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +78,7 @@
             android:layout_marginTop="144dp"
             android:onClick="searchtest"
             android:text="@string/button"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
